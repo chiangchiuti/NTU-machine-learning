@@ -118,10 +118,10 @@ def read_data(x_list, y_list, testing_list):
 		date_temp = '2014/1/1'
 		x_feature = []
 		for row in reader:
-			if row[0] == date_temp and row[2] == 'PM2.5':
+			if row[0] == date_temp and row[2] == 'PM2.5':  # only use PM2.5 as feature
 				x_feature = row[3:12]  # 1~9 hour
 				x_feature = list(map(int, x_feature))
-				y_list.append(int(row[13]))  # no 10 hour
+				y_list.append(int(row[13]))  # no.10 hour as our target value
 				x_list.append(x_feature)  # add to x_array
 			else:
 				date_temp = row[0]
