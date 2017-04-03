@@ -1,4 +1,4 @@
-# NTU-machine-learning
+## NTU-machine-learning
 This respository puts the homeworks of NTU ML courses http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML16.html
 
 Homework 1: use linear regression to predict the PM2.5 http://speech.ee.ntu.edu.tw/~tlkagk/courses/ML_2016/Lecture/hw1.pdf
