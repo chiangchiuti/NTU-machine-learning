@@ -189,7 +189,7 @@ if __name__ == '__main__':
         for row in reader:
             if row[0] == date_temp and row[2] == 'PM2.5':
                 '''
-                    only use PM2.5 column here, that's mean I use past nine hours value to predcit the last hour's value
+                    only use PM2.5 column here, that mean I use past nine hours value to predcit the last hour's value
                 '''
                 x_feature = row[3:12]  # 1~9 hour
                 x_feature = list(map(int, x_feature))
