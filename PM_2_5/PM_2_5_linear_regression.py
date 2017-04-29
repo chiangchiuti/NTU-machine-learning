@@ -3,6 +3,8 @@ import matplotlib.pyplot as plt
 import csv
 '''
 this file is for NTU ML class' first homework: predict the PM2.5
+    X_10 = W_1 * X_1 + W_2 * X_2 + W_3 * X_3 + W_4 * X_4 + ..... + W_9 * X_9
+    X_1 to X_9 represent the last 9 hour respectively and it should predict the X_10's value
 '''
 
 
@@ -154,6 +156,9 @@ def different_case(x_list, y_list, Weight_array, Bias, learning_rate, number_ite
 
 
 def feature_scaling(x_list):
+    '''
+        do the feature scaling among different x (x_1 to x_9)
+    '''
     X = np.array(x_list)
 
     mean_array = np.mean(X, axis=0)
@@ -181,9 +186,12 @@ if __name__ == '__main__':
         x_feature = []
         for row in reader:
             if row[0] == date_temp and row[2] == 'PM2.5':
+                '''
+                    only use PM2.5 column here, that's mean I use past nine hours value to predcit the last hour's value
+                '''
                 x_feature = row[3:12]  # 1~9 hour
                 x_feature = list(map(int, x_feature))
-                y_list.append(int(row[13]))  # no 10 hour
+                y_list.append(int(row[13]))  # Number 10 hour
                 x_list.append(x_feature)  # add to x_array
             else:
                 date_temp = row[0]
